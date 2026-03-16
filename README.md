@@ -25,13 +25,16 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- [] Describe the game's purpose.  
+  The game is a number guessing challenge where players select a difficulty level (Easy, Normal, Hard) and try to guess a secret number within the specified range using limited attempts, receiving hints to guide them higher or lower.
+- [] Detail which bugs you found.  
+  The hints were reversed (telling you to go higher when you were too high), the secret number changed on every submit due to Streamlit reruns, the New Game button didn't reset state properly, and the attempt counter didn't decrement correctly on the first guess.
+- [] Explain what fixes you applied.  
+  Corrected the hint messages in "check_guess", moved game logic to "logic_utils.py" for better organization, implemented proper session state management to stabilize the secret number, fixed the New Game reset to clear all state, and adjusted the attempt counter to decrement immediately on submission.
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
+![Demo Screenshot](image.png)
 
 ## 🚀 Stretch Features
 

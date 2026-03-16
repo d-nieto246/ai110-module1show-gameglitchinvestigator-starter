@@ -34,15 +34,12 @@ I decided a bug was really fixed by verifying the behavior both in code (via pyt
 
 ## 4. What did you learn about Streamlit and state?
 
-- In your own words, explain why the secret number kept changing in the original app.
-- How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
-- What change did you make that finally gave the game a stable secret number?
+- The secret number kept changing in the app because every time you clicked a button or interacted with the page, Streamlit would rerun the entire script from top to bottom, regenerating the secret number each time without saving it anywhere. 
 
----
+- Imagine the app is like a recipe that gets cooked fresh every time you do something, like clicking a button. The whole page "reruns" and rebuilds itself, but session state is like a fridge where you can store ingredients (like variables) so they don't disappear between cooks. 
+
+- To make the secret number stay the same, I added checks to only pick a new number if one wasn't already saved, and to change it only when the difficulty level changes.
 
 ## 5. Looking ahead: your developer habits
 
-- What is one habit or strategy from this project that you want to reuse in future labs or projects?
-  - This could be a testing habit, a prompting strategy, or a way you used Git.
-- What is one thing you would do differently next time you work with AI on a coding task?
-- In one or two sentences, describe how this project changed the way you think about AI generated code.
+One habit I want to reuse is running pytest after every major change to catch bugs early, as it helped me confirm that the game logic was working correctly without breaking existing features. Next time I work with AI, I would ask for more specific examples or edge cases upfront to avoid misunderstandings, like when the attempt counter didn't decrement as expected. This project showed me that AI-generated code can be a great starting point but often needs careful testing and fixes, making me more cautious about relying on it without verification.
